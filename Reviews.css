@@ -1,0 +1,85 @@
+
+.reviews-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.reviews-section h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.user-box input[type="text"],
+.user-box input[type="number"],
+.user-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="button"] {
+    background: #03a9f4;
+    color: #fff;
+}
+
+button[type="button"]:hover {
+    background: #0288d1;
+}
+
+.reviews {
+    margin-top: 20px;
+}
+
+.review-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+}
+
+.review-card h3 {
+    margin: 0 0 10px;
+}
+
+.review-card p {
+    margin: 5px 0;
+}
+
+.review-card .rating {
+    font-weight: bold;
+
+}
+
+
+.suggestions {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background: #fff;
+    width: calc(100% - 20px);
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background: #f0f0f0;
+}

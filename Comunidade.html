@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade</title>
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Comunidade</h1>
+            <button onclick="logout()">Logout</button>
+        </header>
+        <section id="suggestions">
+            <h2>Sugestões de Comunidades e Usuários para Seguir</h2>
+            <div id="communitySuggestions">
+                <!-- Sugestões de comunidades e usuários serão preenchidas dinamicamente -->
+            </div>
+        </section>
+        <section id="createPost">
+            <h2>Criar Nova Postagem</h2>
+            <form id="createPostForm">
+                <textarea id="postContent" placeholder="Escreva sua postagem..." required></textarea>
+                <input type="url" id="postLink" placeholder="Compartilhar um link">
+                <input type="file" id="postImage" accept="image/*">
+                <input type="file" id="postVideo" accept="video/*">
+                <button type="button" onclick="createPost()">Postar</button>
+            </form>
+        </section>
+        <section id="postsList">
+            <h2>Postagens Recentes</h2>
+            <div id="postsContainer">
+                <!-- Lista de postagens será preenchida dinamicamente -->
+            </div>
+        </section>
+    </div>
+
+    <script src="community.js"></script>
+</body>
+</html>
+

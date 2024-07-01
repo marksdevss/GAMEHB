@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews de Jogos</title>
+    <link rel="stylesheet" href="Reviews.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <header>
+            <button id="toggleModeButton">Toggle Dark/Light Mode</button>
+        </header>
+        <section class="reviews-section">
+            <h1>Reviews de Jogos</h1>
+            <form id="addReviewForm">
+                <div class="user-box">
+                    <input type="text" id="reviewGame" placeholder="Nome do Jogo" required>
+                    <ul id="suggestions" class="suggestions"></ul>
+                </div>
+                <div class="user-box">
+                    <textarea id="reviewText" placeholder="Sua Review" required></textarea>
+                </div>
+                <div class="user-box">
+                    <input type="number" id="reviewRating" placeholder="Nota (0-10)" min="0" max="10" required>
+                </div>
+                <button type="button" onclick="addReview()">Adicionar Review</button>
+            </form>
+            <div id="reviewsList" class="reviews"></div>
+        </section>
+        <footer>
+            <button onclick="window.history.back()">Voltar</button>
+        </footer>
+    </div>
+    <script src="reviews.js"></script>
+    <script src="toggleMode.js"></script>
+</body>
+</html>

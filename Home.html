@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Jogos - BETA</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+
+<body class="light-mode">
+    <div class="container">
+        <h1 class="biblioteca-titulo">Biblioteca de Jogos - BETA</h1>
+        <button id="toggleModeButton">Toggle Dark/Light Mode</button>
+        <form id="searchForm">
+            <input type="text" id="searchInput" name="search" placeholder="Search for games...">
+            <button type="button" id="searchButton">Search</button>
+            <button type="button" id="clearButton">Limpar</button>
+            <button type="button" id="buttonLogin">
+                <a id="text-login" href="login.html">Login</a>
+            </button>
+            <a href="#" onclick="alert('This is a dummy button.'); return false;" disabled>
+                <span></span><span></span><span></span><span></span>
+                Register
+            </a>
+            <button type="button" id="profileButton" style="display: none;">
+                <a href="profile.html">Meu Perfil</a>
+            </button>
+            <button type="button" id="reviewsButton" style="display: none;">
+                <a id="text-login" href="reviews.html">Minhas Reviews</a>
+            </button>
+            <button type="button" id="communityButton" style="display: none;">
+                <a href="Comunidade.html">Comunidade</a>
+            </button>
+            <img id="userAvatar" src="" alt="User Avatar" class="avatar" style="display: none;">
+        </form>
+        <div id="gamesList" class="games"></div>
+        
+        <div class="chat-bubble" id="chatBubble">
+            <img src="msg.png" alt="Chat Icon">
+        </div>
+        
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-container">
+                <aside class="user-list">
+                    <h2>Usuários</h2>
+                    <ul id="userList">
+                        <!-- Lista de usuários será preenchida dinamicamente -->
+                    </ul>
+                </aside>
+                <main class="chat-main">
+                    <header>
+                        <h1 id="chatHeader">Bate-Papo</h1>
+                    </header>
+                    <div class="chat-window" id="chatWindow">
+                        <!-- Mensagens vão aparecer aqui -->
+                    </div>
+                    <div class="chat-input">
+                        <input type="file" id="fileInput" accept="image/*,video/*,audio/*">
+                        <input type="text" id="textInput" placeholder="Digite sua mensagem...">
+                        <button id="sendButton">Enviar</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="chat.js"></script>
+    <script src="toggleMode.js"></script>
+</body>
+
+</html>

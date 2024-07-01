@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade - Grupos</title>
+    <link rel="stylesheet" href="groups.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grupos da Comunidade</h1>
+            <button onclick="showCreateGroupPopup()">Criar Grupo</button>
+            <button onclick="logout()">Logout</button>
+        </header>
+        <section id="groupsList">
+            <!-- Lista de grupos será preenchida dinamicamente -->
+        </section>
+    </div>
+
+    <!-- Pop-up para criar um novo grupo -->
+    <div id="createGroupPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hideCreateGroupPopup()">&times;</span>
+            <h2>Criar Novo Grupo</h2>
+            <form id="createGroupForm">
+                <div class="user-box">
+                    <input type="text" id="groupName" placeholder="Nome do Grupo" required>
+                </div>
+                <div class="user-box">
+                    <input type="text" id="groupDescription" placeholder="Descrição do Grupo" required>
+                </div>
+                <button type="button" onclick="createGroup()">Criar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="groups.js"></script>
+</body>
+</html>

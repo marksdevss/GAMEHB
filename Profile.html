@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="Profile.css">
+</head>
+
+<body class="light-mode">
+    <div class="container">
+        <header>
+            <button id="toggleModeButton">Toggle Dark/Light Mode</button>
+        </header>
+        <section class="profile-section">
+            <h1>Perfil do Usuário</h1>
+            <div class="container">
+                <div class="profile-box">
+                    <h2>Profile</h2>
+                    <div class="avatar">
+                        <img id="avatar" src="" alt="User Avatar">
+                    </div>
+                    <div class="username">
+                        <h3 id="username"></h3>
+                    </div>
+                    <div class="badge">
+                        <p id="badge"></p>
+                    </div>
+                    <div class="discord-activity">
+                        <p id="discordActivity">Not Playing</p>
+                    </div>
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20activities.read">
+                        Connect with Discord
+                    </a>
+                </div>
+            </div>
+                <button id="editProfileButton">Editar Perfil</button>
+            </div>
+            <form id="editProfileForm" style="display: none;">
+                <div class="user-box">
+                    <input type="text" id="editUsername" placeholder="New Username" required>
+                </div>
+                <div class="user-box">
+                    <input type="file" id="editAvatar" accept="image/*">
+                </div>
+                <button type="button" onclick="saveProfile()">Salvar</button>
+                <button type="button" onclick="cancelEdit()">Cancelar</button>
+                <a
+                    href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20activities.read">Login
+                    with Discord</a>
+            </form>
+        </section>
+        <section class="library-section">
+            <h2>Minha Biblioteca de Jogos</h2>
+            <div id="libraryGames" class="games"></div>
+        </section>
+        <footer>
+            <button onclick="window.history.back()">Voltar</button>
+        </footer>
+    </div>
+    <script src="profile.js"></script>
+    <script src="toggleMode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <style>
+     body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #141414;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-box {
+    position: relative;
+    width: 300px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.user-box {
+    position: relative;
+}
+
+.user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+a span {
+    position: absolute;
+    display: block;
+}
+
+a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+
+/* Responsiveness */
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        margin-top: 12%;
+    }
+
+    .login-box {
+        width: 400px;
+        margin: 10px;
+    }
+
+    .user-box input {
+        font-size: 18px;
+    }
+
+    a {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .login-box {
+        width: 450px;
+    }
+
+    .user-box input {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 20px;
+    }
+}
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <div class="user-box">
+                <input type="text" name="username" required>
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <a href="#" onclick="loginUser(); return false;">
+                <span></span><span></span><span></span><span></span>
+                Login
+            </a>
+        </div>
+        
+        <div class="login-box">
+            <h2>Register</h2>
+            <div class="user-box">
+                <input type="text" name="newUsername" required>
+                <label>New Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="newPassword" required>
+                <label>New Password</label>
+            </div>
+            <div class="user-box">
+                <input type="file" id="fileUpload" accept="image/*" required>
+            </div>
+            <a href="#" onclick="registerUser(); return false;">
+                <span></span><span></span><span></span><span></span>
+                Register
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function loginUser() {
+            const username = document.querySelector('input[name="username"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+            const storedUser = localStorage.getItem(username);
+
+            console.log("Trying to log in with username:", username);
+            console.log("Stored user data:", storedUser);
+
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                if (user.password === password) {
+                    alert('Login Successful!');
+                    localStorage.setItem('currentUser', username);
+                    window.location.href = 'Home.html';
+                } else {
+                    alert('Incorrect password!');
+                }
+            } else {
+                alert('User not found!');
+            }
+        }
+
+        function registerUser() {
+            const newUsername = document.querySelector('input[name="newUsername"]').value;
+            const newPassword = document.querySelector('input[name="newPassword"]').value;
+            const fileUpload = document.getElementById('fileUpload').files[0];
+
+            if (newUsername && newPassword && fileUpload) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const user = {
+                        username: newUsername,
+                        password: newPassword,
+                        avatar: event.target.result,
+                        badge: 'New Gamer'
+                    };
+                    localStorage.setItem(newUsername, JSON.stringify(user));
+                    console.log("User registered:", user);
+                    alert('User registered successfully!');
+                };
+                reader.readAsDataURL(fileUpload);
+            } else {
+                alert('Please fill all the fields and upload an image.');
+            }
+        }
+    
+    </script>
+</body>
+</html>

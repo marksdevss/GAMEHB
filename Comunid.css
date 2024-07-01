@@ -1,0 +1,209 @@
+
+.community-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.community-section h1 {
+    text-align: center;
+}
+
+.user-box textarea,
+.user-box input[type="file"],
+.user-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="button"] {
+    background: #03a9f4;
+    color: #fff;
+}
+
+button[type="button"]:hover {
+    background: #0288d1;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post-card, .comment-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+}
+
+.post-card p, .comment-card p {
+    margin: 10px 0;
+}
+
+.post-card .actions, .comment-card .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-card .actions button, .comment-card .actions button {
+    background: #03a9f4;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.post-card .actions button:hover, .comment-card .actions button:hover {
+    background: #0288d1;
+}
+
+.comment-section {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.comment-section textarea,
+.comment-section input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.comment-card {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f0f0f0;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Pop-up de Enquete */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Pop-up de Notificações */
+#notificationPopup {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.5s;
+}
+
+#notificationPopup .popup-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s;
+}
+
+#notificationList {
+    list-style: none;
+    padding: 0;
+}
+
+#notificationList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#notificationList li.unread {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+#notificationList li:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-20px);}
+    to {transform: translateY(0);}
+}
